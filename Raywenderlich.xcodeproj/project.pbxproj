@@ -13,6 +13,8 @@
 		6B159F7722B5358900F78812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B159F7522B5358900F78812 /* Main.storyboard */; };
 		6B159F7922B5358B00F78812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B159F7822B5358B00F78812 /* Assets.xcassets */; };
 		6B159F7C22B5358B00F78812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B159F7A22B5358B00F78812 /* LaunchScreen.storyboard */; };
+		6B159F9022B5442000F78812 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B159F8E22B5441F00F78812 /* DebugViewController.swift */; };
+		6B159F9122B5442000F78812 /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B159F8F22B5441F00F78812 /* DebugViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		6B159F7822B5358B00F78812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B159F7B22B5358B00F78812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B159F7D22B5358B00F78812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B159F8E22B5441F00F78812 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		6B159F8F22B5441F00F78812 /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugViewController.xib; sourceTree = "<group>"; };
 		D9D6E66FC6DE88DA8B4D8183 /* Pods-Raywenderlich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raywenderlich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raywenderlich/Pods-Raywenderlich.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,12 +67,22 @@
 			children = (
 				6B159F7122B5358900F78812 /* AppDelegate.swift */,
 				6B159F7322B5358900F78812 /* ViewController.swift */,
+				6B159F8E22B5441F00F78812 /* DebugViewController.swift */,
+				6B159F8F22B5441F00F78812 /* DebugViewController.xib */,
+				6B159F9422B54A2600F78812 /* Extensions */,
 				6B159F7522B5358900F78812 /* Main.storyboard */,
 				6B159F7822B5358B00F78812 /* Assets.xcassets */,
 				6B159F7A22B5358B00F78812 /* LaunchScreen.storyboard */,
 				6B159F7D22B5358B00F78812 /* Info.plist */,
 			);
 			path = Raywenderlich;
+			sourceTree = "<group>";
+		};
+		6B159F9422B54A2600F78812 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		87217EB4D64FEDD45B18386C /* Frameworks */ = {
@@ -150,6 +164,7 @@
 			files = (
 				6B159F7C22B5358B00F78812 /* LaunchScreen.storyboard in Resources */,
 				6B159F7922B5358B00F78812 /* Assets.xcassets in Resources */,
+				6B159F9122B5442000F78812 /* DebugViewController.xib in Resources */,
 				6B159F7722B5358900F78812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B159F9022B5442000F78812 /* DebugViewController.swift in Sources */,
 				6B159F7422B5358900F78812 /* ViewController.swift in Sources */,
 				6B159F7222B5358900F78812 /* AppDelegate.swift in Sources */,
 			);
