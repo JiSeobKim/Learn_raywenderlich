@@ -1,0 +1,6 @@
+framework module Pods_Raywenderlich {
+  umbrella header "Pods-Raywenderlich-umbrella.h"
+
+  export *
+  module * { export * }
+}
