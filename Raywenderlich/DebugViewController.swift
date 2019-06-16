@@ -14,17 +14,21 @@ class DebugViewController: UIViewController {
 
     let disposeBag = DisposeBag()
     
-    @IBOutlet weak var lbFlush: UILabel!
-    @IBOutlet weak var btnFlush: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-//        btnFlush.rx.tap.subscribe { (_) in
-//            print("옆에 Label로 테스트하세여")
-//        }.disposed(by: disposeBag)
+        let btnFlush = self.view.viewWithTag(1) as! UIButton
+        let lbFlush = self.view.viewWithTag(2) as! UILabel
+        
+        btnFlush.rx.tap.subscribe { (_) in
+            print("옆에 Label로 테스트하세여")
+            
+            print(lbFlush.text)
+        }.disposed(by: disposeBag)
         
         
     }

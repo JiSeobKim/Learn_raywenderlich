@@ -13,7 +13,7 @@
         <!--Contents-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Raywenderlich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Raywenderlich" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fKE-ZV-ZYn">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fKE-ZV-ZYn" customClass="MainCollectionViewCell" customModule="Raywenderlich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -46,11 +46,12 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Jl2-85-ZSL" firstAttribute="centerY" secondItem="fKE-ZV-ZYn" secondAttribute="centerY" id="K1J-71-KhR"/>
                                             <constraint firstItem="Jl2-85-ZSL" firstAttribute="centerY" secondItem="fKE-ZV-ZYn" secondAttribute="centerY" id="QYB-Qb-4az"/>
                                             <constraint firstItem="Jl2-85-ZSL" firstAttribute="centerX" secondItem="fKE-ZV-ZYn" secondAttribute="centerX" id="wX8-tV-j2V"/>
-                                            <constraint firstItem="Jl2-85-ZSL" firstAttribute="centerX" secondItem="fKE-ZV-ZYn" secondAttribute="centerX" id="yIb-YV-Yzy"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="lbTitle" destination="Jl2-85-ZSL" id="cDS-jF-EHy"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
