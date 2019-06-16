@@ -12,7 +12,16 @@ import RxCocoa
 
 class MainViewController: UIViewController {
     
-    private var items = ["Debug"]
+    enum VCList: String, CaseIterable {
+        case debug = "Debug"
+        
+        func getVCName() -> String {
+            return self.rawValue + "ViewController"
+        }
+        
+    }
+    
+    private var items: [VCList] = []
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,6 +30,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        for row in VCList.allCases {
+            items.append(row)
+        }
         
         setNaviButton()
     }
@@ -45,7 +59,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         
-        cell.updateCell(text: self.items[indexPath.row])
+        cell.updateCell(text: self.items[indexPath.row].rawValue)
         
         return cell
     }
@@ -62,18 +76,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vcName = "\(items[indexPath.row])ViewController"
-//        let vc = DebugViewController(nibName: vcName, bundle: nil)
-        let classFile = NSClassFromString(vcName) as! NSObject.Type
-    
+
+        let item = items[indexPath.row]
+        let vcName = item.getVCName()
         
-        
-        let vc = UIViewController(nibName: vcName, bundle: nil) as! classFile.self
-        
-//        vc.navigationItem.title = items[indexPath.row]
-//        self.show(vc, sender: nil)
-        
-        
+        switch item {
+        case .debug:
+            let vc = DebugViewController(nibName: vcName, bundle: nil)
+            vc.navigationItem.title = item.rawValue
+            self.show(vc, sender: self)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

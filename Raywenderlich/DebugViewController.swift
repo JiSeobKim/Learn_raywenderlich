@@ -24,13 +24,26 @@ class DebugViewController: UIViewController {
         let btnFlush = self.view.viewWithTag(1) as! UIButton
         let lbFlush = self.view.viewWithTag(2) as! UILabel
         
-        btnFlush.rx.tap.subscribe { (_) in
-            print("옆에 Label로 테스트하세여")
-            
-            print(lbFlush.text)
-        }.disposed(by: disposeBag)
+//        btnFlush.rx.tap.subscribe { (_) in
+//            print("옆에 Label로 테스트하세여")
+//
+//            print(lbFlush.text ?? "")
+//            self.testExpression()
+//
+//        }.disposed(by: disposeBag)
         
+        btnFlush.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         
+    }
+    
+    @objc func tapAction() {
+    
+        print("tap")
+    
+    }
+    
+    func testExpression() {
+        print("Test expr -i false -- method()")
     }
 
 
