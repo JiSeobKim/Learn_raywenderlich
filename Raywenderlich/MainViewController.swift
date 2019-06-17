@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     
     enum VCList: String, CaseIterable {
         case debug = "Debug"
+        case coreData = "CoreData"
         
         func getVCName() -> String {
             return self.rawValue + "ViewController"
@@ -83,6 +84,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch item {
         case .debug:
             let vc = DebugViewController(nibName: vcName, bundle: nil)
+            vc.navigationItem.title = item.rawValue
+            self.show(vc, sender: self)
+            
+        case .coreData :
+            let vc = CoreDataViewController(nibName: vcName, bundle: nil)
             vc.navigationItem.title = item.rawValue
             self.show(vc, sender: self)
         }

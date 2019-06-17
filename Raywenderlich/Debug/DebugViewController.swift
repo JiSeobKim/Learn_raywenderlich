@@ -21,19 +21,21 @@ class DebugViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let btnFlush = self.view.viewWithTag(1) as! UIButton
         let lbFlush = self.view.viewWithTag(2) as! UILabel
         
-//        btnFlush.rx.tap.subscribe { (_) in
-//            print("옆에 Label로 테스트하세여")
-//
-//            print(lbFlush.text ?? "")
-//            self.testExpression()
-//
-//        }.disposed(by: disposeBag)
-        
-        btnFlush.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
-        
+        btnFlush.rx.tap.subscribe { (_) in
+            print("옆에 Label로 테스트하세여")
+            
+            print(lbFlush.text ?? "")
+            self.testExpression()
+            
+            }.disposed(by: disposeBag)
+
     }
     
     @objc func tapAction() {
